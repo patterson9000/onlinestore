@@ -1,13 +1,16 @@
 import "./product.css";
 import QuantityPicker from "./quantityPicker";
 
-const Product = () => {
+const Product = (props) => {
     return (
       <div className="product">
-        <img src="https://picsum.photos/200/300
-" alt="product" />
+        <img src={"/images/" + props.data.image}
+ alt=" product" />
 
-        <h5>title here</h5>
+        <h5>{props.data.title}</h5>
+
+        <label>Total: ${props.data.price.toFixed(2)}</label>
+        <label>Price: ${props.data.price.toFixed(2)}</label>
 
         <QuantityPicker></QuantityPicker>
     </div>

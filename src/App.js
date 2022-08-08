@@ -2,10 +2,11 @@
 import "./App.css";
 import NavBar from "./component/navBar";
 import Footer from "./component/footer";
-import QuantityPicker from "./component/quantityPicker";
 import AboutMe from "./component/aboutMe";
-import Product from "./component/product";
 import CataLog from "./component/cataLog";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/js/bootstrap.min.js";
+
 
 function App() {
   return (
