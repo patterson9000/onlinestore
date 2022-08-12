@@ -1,0 +1,14 @@
+.about-me h1{
+    margin:20px
+    
+}
+.about-me h4{
+    margin:20px
+    
+}
+.about-me .btn{
+    margin-bottom: 20px;
+    color: white;
+    background-color:black;
+    font-weight: 700;
+}

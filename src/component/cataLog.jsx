@@ -1,34 +1,50 @@
-import "./cataLog.css"; 
+import "./cataLog.css";
 import Product from "./product";
 import { useEffect, useState } from "react";
 import DataService from "../services/dataService";
 
-const CataLog = () =>{
+const CataLog = () => {
+  const [products, setProducts] = useState([]);
+  const [catagories, setCatagories] = useState([]);
 
-    const [products,setProducts] = useState([]);
+  const loadData = () => {
+    let service = new DataService(); // instance of the class
+    let prods = service.getCatalog();
+    setProducts(prods);
 
-    const loadData = () => {
-      let service = new DataService();// instance of the class
-      let prods = service.getCatalog();
-      setProducts(prods);
-    };
-    
-     useEffect(() => {
-        loadData();
-     }, []);
+    let uniques = [];
+    for (let i = 0; i < prods.length; i++) {
+      let prod = prods[i];
+      if (!uniques.includes(prod.category)) {
+        uniques.push(prod.category);
+      }
+    }
+    setCatagories(uniques);
+  };
 
-    return(
-       <div className="catalog">
-        <h1>check our cataLog</h1>
+  useEffect(() => {
+    loadData();
+  }, []);
 
-        <div className="Product-list">
-          {products.map((prod) => (
-            <Product key={prod._id} data={prod}></Product>
-            
-          ))}
-       </div>
-       </div>
-    );
+  return (
+    <div className="catalog">
+      <h1>check our cataLog</h1>
+
+      <div className="filter">
+        {catagories.map((cat) => (
+          <button key={cat} className="cat-btn">
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      <div className="Product-list">
+        {products.map((prod) => (
+          <Product key={prod._id} data={prod}></Product>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default CataLog;

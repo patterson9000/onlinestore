@@ -13,7 +13,7 @@ const AboutMe = () => {
         <h1>hi, my name is</h1>
         <h4>{name}</h4>
 
-        <button onClick={toggleName}>See my name</button>
+        <button className="btn" onClick={toggleName}>See my name</button>
     </div>
     );
 };
