@@ -29,7 +29,7 @@ const catalog = [
     },
     {
         _id:"5",
-        title:"shoe",
+        title:"shoes",
         price:60.00 , 
         category: "workout equipment",
         image:"shoes.jpg",
