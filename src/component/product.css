@@ -37,7 +37,7 @@
     font-weight: 700;
     position: relative;
     bottom: 175px;
-    background-color: white;
+    background-color: lightgray;
    
 }
 .product .price .total label{
@@ -65,7 +65,7 @@
 .controls{
     width:150px;
     align-items: center;
-    background-color: aliceblue;
+    background-color: lightgray;
     font-weight: 700;
     position: relative;
     bottom: 245px;  

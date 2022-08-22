@@ -1,27 +1,36 @@
 
 import "./App.css";
 import NavBar from "./component/navBar";
+import Home from "./component/home";
 import Footer from "./component/footer";
 import AboutMe from "./component/aboutMe";
 import CataLog from "./component/cataLog";
 import ShoppingList from "./component/shoppingList";
+import Cart from "./component/cart";
+
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap.min.js";
 
 
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+
 function App() {
   return (
     <div className="App">
-      <NavBar></NavBar>
-      <h1 >My super online store</h1>
-      <CataLog/>
+      <BrowserRouter>
+      <NavBar/>
 
-      <AboutMe></AboutMe>
-      
-      <ShoppingList></ShoppingList>
+      <Routes>
+         <Route path="/" element={<Home/>} />
+         <Route path="/catalog" element={<CataLog/>} />
+         <Route path="/aboutme" element={<AboutMe/>} />
+         <Route path="/shoppinglist" element={<ShoppingList/>} />
+         <Route path="/cart" element={<Cart/>} />
+      </Routes>
       
      <Footer></Footer>
+     </BrowserRouter>
     </div>
   );
 }
