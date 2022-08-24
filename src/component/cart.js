@@ -1,12 +1,11 @@
 import "./cart.css";
 
 const Cart = () => {
-    return(
+  return (
     <div className="cart">
-        <h1>Ready to pay?</h1>
-       
+      <h1>Ready to pay?</h1>
     </div>
-    );
+  );
 };
 
 export default Cart;

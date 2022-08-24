@@ -7,7 +7,11 @@ const ShoppingList = () => {
 
     const save = () => {
         console.log(text);
-        item.push(text);
+
+        let clone = [...item];
+        clone.push(text);
+        setItem(clone);
+        
     };
 
     const textChange= (e) => {

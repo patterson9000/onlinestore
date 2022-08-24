@@ -42,3 +42,19 @@
   }
 }
 
+.my-form {
+  margin-bottom: 10px;
+}
+
+.my-form label {
+  display: inline-block;
+  width: 90px;
+  text-align: right;
+  margin-right: 7px;
+}
+.my-form input {
+  width: auto;
+
+}
+
+

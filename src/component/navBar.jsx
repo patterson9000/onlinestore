@@ -23,16 +23,8 @@ const NavBar = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="#">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="#">
-                  Link
-                </Link>
-              </li>
+             
+              
               <li className="nav-item">
                 <Link className="nav-link active" aria-current="page" to="/">
                   Home
@@ -52,13 +44,22 @@ const NavBar = () => {
               </li>
 
               <li className="nav-item">
+                <Link className="nav-link" to="/admin">
+                  Admin
+                </Link>
+              </li>
+
+              <li className="nav-item">
                 <Link className="nav-link" to="/aboutme">
                   About
                 </Link>
               </li>
             </ul>
             <form className="d-flex" role="search">
-              <Link className="btn btn-outline-info" to="/cart">View Cart</Link>
+              <Link className="btn btn-outline-info" to="/cart">
+                View Cart
+              </Link>
+
             </form>
           </div>
         </div>
