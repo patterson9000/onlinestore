@@ -28,7 +28,7 @@ const CataLog = () => {
 
   return (
     <div className="catalog">
-      <h1>check our cataLog</h1>
+      <h1>Check Our CataLog</h1>
 
       <div className="filter">
         {catagories.map((cat) => (

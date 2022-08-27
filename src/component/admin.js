@@ -12,7 +12,7 @@ const Admin = () => {
 
   const textChange = (e) => {
     let value = e.target.value;
-    let name = e.taget.name;
+    let name = e.target.name;
 
     let copy = { ...product };
     copy[name] = value;
@@ -26,7 +26,7 @@ const Admin = () => {
 
   const couponChange = (e) => {
     let value = e.target.value;
-    let name = e.taget.name;
+    let name = e.target.name;
 
     let copy = { ...coupon };
     copy[name] = value;

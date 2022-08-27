@@ -10,7 +10,7 @@ const AboutMe = () => {
 
     return(
     <div className="about-me">
-        <h1>hi, my name is</h1>
+        <h1>Hi, My Name Is</h1>
         <h4>{name}</h4>
 
         <button className="btn" onClick={toggleName}>See my name</button>
