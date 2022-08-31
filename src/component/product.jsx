@@ -8,11 +8,11 @@ const Product = (props) => {
   const addToCart = useContext(StoreContext).addToCart;
 
   const handleAddClick = () => {
-    console.log(props.data.title);
     
-    addToCart(props.data);
+    let prodForCart = {...props.data, quantity: quantity};
+    addToCart(prodForCart);
   };
-  
+ 
 
   const onQuantityChange = (quantity) => {
     setQuantity(quantity);

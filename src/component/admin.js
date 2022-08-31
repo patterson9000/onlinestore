@@ -1,13 +1,34 @@
 import "./admin.css";
 import { useState } from "react";
+import DataService from "../services/dataService";
 
 const Admin = () => {
   const [product, setProduct] = useState({});
   const [coupon, setCoupon] = useState({});
+  const [showProdSuccess, setShowProdSuccess] = useState({});
 
-  const saveProduct = () => {
+  const saveProduct = async () => {
     console.log("Saving Product");
     console.log(product);
+
+    // use service to send it to server
+
+   let fixProd = {...product};
+   fixProd.price = +fixProd.price;
+
+
+    let service = new DataService();
+    let savedProd = await service.service.saveProduct(fixProd);
+    
+
+    if(savedProd && savedProd._id){
+      setShowProdSuccess(true);
+
+      setTimeout (() => { 
+        setShowProdSuccess (false)
+      }, 6000); // milli seconds
+
+    }
   };
 
   const textChange = (e) => {
@@ -36,6 +57,9 @@ const Admin = () => {
   return (
     <div className="admin">
       <h1>Store administration</h1>
+
+      {showProdSuccess ?<div className="alert alert-success">product saved</div> : null }
+
       <div className="parents">
         <section className="products">
           <h3>Register Products</h3>

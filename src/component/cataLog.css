@@ -20,3 +20,15 @@
     margin: 10px;
     font-weight: 700;
 }
+
+.cart .parent {
+    display: flex;
+}
+
+.cart .products{
+    flex: 3;
+}
+
+.cart .side-menu {
+    flex:3
+}
