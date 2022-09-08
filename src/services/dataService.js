@@ -47,19 +47,34 @@ const catalog = [
 
 
 class DataService{
+
+    serverURL = 'http://127.0.0.1:5000'
+
     async getCatalog(){
         //call the servier
         // get the list of products and return it
-        let res = await axios.get('http://127.0.0.1:5000/api/catalog');
+        let res = await axios.get(this.serverUrl + '/api/catalog');
          return res.data;
 
        // return catalog;
     }
 
     async saveProduct(prod){
-        let res = await axios.post('http://127.0.0.1:5000/api/catalog', prod);
+        let res = await axios.post(this.serverUrl + '/api/catalog', prod);
         return res.data;
     }
-}
+
+    async getCoupons(){
+        let res = await axios.get(this.serverUrl + '/api/coupons')
+        return res.data;
+    }
+
+    async saveCoupon(coupon) {
+        let res = await axios.post(this.serverUrl +'/api/coupons', coupon);
+        return res.data;
+    }
+
+    }
+
 
 export default DataService;
